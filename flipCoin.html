@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coin flip</title>
+</head>
+
+<style>
+    #toss{
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+    #toss img {
+        max-width: 200px; /* Set a maximum width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+
+</style>
+<body>
+
+    <div id="toss">
+        <p>click here</p>
+        <img src="coin-toss.png" alt="toss">
+    </div>
+
+
+</body>
+
+<script>
+    
+    const toss = document.body.querySelector('#toss');
+
+    toss.addEventListener('click', ()=>{
+        const num = Math.floor(Math.random() * 2); // Generates 0 or 1
+        if(num == 0){
+            setTimeout(() => {
+                toss.innerHTML = '<div id="toss"><img src="head.png" alt="head"></div>  <div>head</div>'
+            }, 2000);
+        } else{
+            setTimeout(()=>{
+                toss.innerHTML = '<div id="toss"><img src="tail.png" alt="tail"></div>  <div>tail</div>'
+            }, 2000)
+        }
+    })
+
+
+</script>
+</html>
