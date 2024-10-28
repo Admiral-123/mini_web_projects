@@ -6,9 +6,10 @@
 </head>
 
 <style>
-    #toss{
+    #toss {
         height: 100vh; /* Full viewport height */
         display: flex;
+        flex-direction: column; /* Stack items vertically */
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
     }
@@ -17,16 +18,20 @@
         max-width: 200px; /* Set a maximum width */
         height: auto; /* Maintain aspect ratio */
     }
-    
 
+    #toss p {
+        margin-top: 10px; /* Add some space between the image and text */
+        font-size: 18px;
+        text-align: center;
+    }
 </style>
+
 <body>
 
     <div id="toss">
-        <p>click here</p>
         <img src="coin-toss.png" alt="toss">
+        <p>Click here and wait few seconds</p>
     </div>
-
 
 </body>
 
@@ -38,11 +43,11 @@
         const num = Math.floor(Math.random() * 2); // Generates 0 or 1
         if(num == 0){
             setTimeout(() => {
-                toss.innerHTML = '<div id="toss"><img src="head.png" alt="head"></div>  <div>head</div>'
+                toss.innerHTML = '<div id="toss"><img src="head.png" alt="head"> <p>tails</p></div>'
             }, 2000);
         } else{
             setTimeout(()=>{
-                toss.innerHTML = '<div id="toss"><img src="tail.png" alt="tail"></div>  <div>tail</div>'
+                toss.innerHTML = '<div id="toss"><img src="tail.png" alt="tail"> <p>tails</p></div>'
             }, 2000)
         }
     })
